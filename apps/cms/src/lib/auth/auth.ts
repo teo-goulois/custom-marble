@@ -38,6 +38,13 @@ import { redis } from "../redis";
 
 const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz0123456789", 6);
 
+// Debug logging for auth configuration
+console.log("[AUTH CONFIG]", {
+  BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
+  NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+  NODE_ENV: process.env.NODE_ENV,
+});
+
 const polarClient = new Polar({
   accessToken: process.env.POLAR_ACCESS_TOKEN,
   server: process.env.NODE_ENV === "production" ? "production" : "sandbox",
