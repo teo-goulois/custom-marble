@@ -26,7 +26,7 @@ export async function sendInviteEmail(
   }: SendInviteEmailProps
 ) {
   return await resend.emails.send({
-    from: "Marble <emails@marblecms.com>",
+    from: process.env.RESEND_FROM as string,
     to: inviteeEmail,
     subject: `Join ${workspaceName} on Marble`,
     react: InviteUserEmail({
@@ -56,7 +56,7 @@ export async function sendVerificationEmail(
   }
 ) {
   return await resend.emails.send({
-    from: "Marble <emails@marblecms.com>",
+    from: process.env.RESEND_FROM as string,
     to: userEmail,
     subject: "Verify your email address",
     react: VerifyUserEmail({
@@ -78,7 +78,7 @@ export async function sendResetPassword(
   }
 ) {
   return await resend.emails.send({
-    from: "Marble <emails@marblecms.com>",
+    from: process.env.RESEND_FROM as string,
     to: userEmail,
     subject: "Reset Your Password",
     react: ResetPasswordEmail({
@@ -97,7 +97,7 @@ export async function sendWelcomeEmail(
   }
 ) {
   return await resend.emails.send({
-    from: "Marble <emails@marblecms.com>",
+    from: process.env.RESEND_FROM as string,
     to: userEmail,
     subject: "Welcome to Marble!",
     react: WelcomeEmail({
