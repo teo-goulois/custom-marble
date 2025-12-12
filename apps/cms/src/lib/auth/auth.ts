@@ -44,6 +44,7 @@ const polarClient = new Polar({
 });
 
 export const auth = betterAuth({
+  baseURL: process.env.BETTER_AUTH_URL,
   database: prismaAdapter(db, {
     provider: "postgresql",
   }),
