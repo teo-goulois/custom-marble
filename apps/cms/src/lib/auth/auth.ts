@@ -43,6 +43,8 @@ console.log("[AUTH CONFIG]", {
   BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
   NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   NODE_ENV: process.env.NODE_ENV,
+  REDIS_URL: process.env.REDIS_URL,
+  POLAR_ACCESS_TOKEN: process.env.POLAR_ACCESS_TOKEN ? "SET" : "NOT SET",
 });
 
 const polarClient = new Polar({
